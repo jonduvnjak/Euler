@@ -1,0 +1,31 @@
+#This code uses 'n' and 'i' to multiple through all possible multiplications
+#between 100 * 100 to 999 * 999. It then checks all results which are palindromic
+#numbers. Each time it finds a palindromic number that is larger than one 
+#previously found then it prints that number.
+#When the loop is finished then the largest palindromic number has been printed.
+
+#n and i represent all numbers between 100 - 999
+n = 100
+largest_palindromic = 1
+
+#Stop when n hits 1000
+while n < 1000:
+#iterate i from 100 - 999
+  for i in range (100, 1001):
+  #when i has iterated through 100 - 999 using the code after 'else' then reset it back to 100
+    if i == 1000:
+      i = 100
+      #as one loop of i being 100 - 999 has been completed, then add 1 to n and start again
+      n += 1
+    else:
+      #this is where the iterations occur 100 - 999
+      result = i * n
+      #this creates a reverse of each result
+      reverse_num = str(result)[::-1]
+	  #this condition checks if there is a palindromic number and whether that palindromic number is larger than 
+	  #any previous palindromic which had been added to the variable 'largest'
+      if result == int(reverse_num) and result > largest_palindromic:
+      	#If a larger palindromic has been found then update the variable 'largest_palindromic' and print it
+      	largest_palindromic = result
+      	print (largest_palindromic)
+      	
