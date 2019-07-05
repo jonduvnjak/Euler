@@ -1,0 +1,14 @@
+smallest_multiple = 20
+counter = 0
+
+while counter < 21:
+  for divide_list in (11, 12, 13, 14, 15, 16, 17, 18, 19, 20):
+    if smallest_multiple % divide_list > 0:
+      smallest_multiple += 20
+      counter = 0
+    elif smallest_multiple % divide_list == 0:
+      counter += 1
+      if counter == 20:
+        print (smallest_multiple)
+        break
+        
