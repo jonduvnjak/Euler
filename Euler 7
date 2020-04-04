@@ -1,0 +1,29 @@
+#Can only be divided by itself and 1
+#How do you then check whether a number is prime?
+#Do you divide it by all numbers less than a half of it?
+#I'll need a counter to count how many primes there are
+#I'll need to print the 10,001st prime and break
+#I'll need to loop until the counter hits 10,001
+#I need some way to contain each check of a prime and reset when the check is complete. Righ now as soon as it cannot divide evenly with a single number in the range then it is printing that number
+
+counter = 0
+is_prime = 10
+
+while counter != 100:
+  for n in range (2,is_prime//2):
+    if is_prime % n == 0:
+      is_prime += 1
+      break 
+    else:
+      checker += 1
+      print (is_prime)
+      counter += 1
+      is_prime += 1 
+      break
+
+    
+    
+
+
+
+  
