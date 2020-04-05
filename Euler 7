@@ -55,7 +55,26 @@ while counter != 10002:
       counter += 1
     
 
+NEW AND UPDATED BY EMIL
 
+def is_prime(primes, candidate):
+    for prime in primes:
+        if candidate % prime == 0:
+            return False
+        if prime * prime > candidate:
+            break
+    return True
+
+
+candidate = 2
+primes = []
+
+while len(primes) < 11:
+    if is_prime(primes, candidate):
+        primes.append(candidate)
+    candidate += 1
+
+print(primes)
 
 
 
