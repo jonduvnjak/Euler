@@ -5,6 +5,9 @@
 #I'll need to print the 10,001st prime and break
 #I'll need to loop until the counter hits 10,001
 #I need some way to contain each check of a prime and reset when the check is complete. Righ now as soon as it cannot divide evenly with a single number in the range then it is printing that number
+#Each check can stop as soon as it finds a number it can evenly devide by. Once it checks all numbers to 1/2 the prime, if all 
+# give uneven di isions then it is a prime.
+
 
 counter = 0
 is_prime = 10
