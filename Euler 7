@@ -23,6 +23,28 @@ while counter != 100:
       counter += 1
       is_prime += 1 
       break
+      
+      
+      
+
+
+def is_prime(candidate):
+    for n in range(2, candidate):
+        if candidate % n == 0:
+            return False
+    return True
+
+counter = 0
+is_prime = 10
+canditate_prime = 3
+
+while counter != 100:
+  if is_prime(canditate_prime) == True:
+      counter += 1
+      canditate_prime +=1
+      print (is_prime(canditate_prime)
+  else:
+    
 
     
     
