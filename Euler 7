@@ -77,5 +77,32 @@ while len(primes) < 11:
 print(primes)
 
 
+NEW NEW NEW
+
+#It first checks whether the candidate number / 
+#the primes list  == 0 (one number from the prime list at a time)
+#If it does == 0 then it means the candidate can
+#can be divided by another number and is not a prime. So false. We only check primes earlier on the list because we don't need to check others. If it does not == 0 then we check whether i*i is greater than the candidate because if it is (and none of the previous calculations equaled 0 (ie: were deivisble)) then we can say that the candidate IS a prime. So we return true.
+def is_prime(primes, candidate):
+    for i in primes:
+        if candidate % i == 0:
+            return False
+        if i * i > candidate:
+            break
+    return True
+
+
+candidate = 2
+primes = []
+
+while len(primes) <= 10000:
+    if is_prime(primes, candidate):
+        primes.append(candidate)
+    if candidate >= 3:
+      candidate += 2
+    else: 
+      candidate += 1
+print(primes)
+
 
   
