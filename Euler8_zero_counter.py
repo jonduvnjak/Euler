@@ -6,8 +6,7 @@ num_list = list(map(int, num))
 answer = 0
 window_size = 13
 zero_counter = 0
-#print(outgoing)
-#print("the product is: %i" % product)
+
 for i in range(len(num_list)-window_size+1):
   outgoing = num_list[i-1]
   incoming = num_list[i-1+window_size]
@@ -31,8 +30,6 @@ for i in range(len(num_list)-window_size+1):
     product = 0
   else:
     product = (product//outgoing)*(incoming)
-    #print(outgoing)
-    #print(incoming)
   print("the product is: %i" % product)
   print(i)
   if product > answer:
