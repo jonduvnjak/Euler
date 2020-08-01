@@ -10,25 +10,25 @@ zero_counter = 0
 for i in range(len(num_list)-window_size+1):
   outgoing = num_list[i-1]
   incoming = num_list[i-1+window_size]
-  if i == 0:
+  if i == 0:  #handle position 0 (since you can't go -1 on this)
     product = math.prod(num_list[0:window_size])
     print("the first product is: %i" % product)
     print(i)
-  elif incoming == 0 or outgoing == 0:
-    if incoming == 0 and outgoing == 0:
+  elif incoming == 0 or outgoing == 0: 
+    if incoming == 0 and outgoing == 0: #zero counter doesn't change because one 0 left but one 0 came in. Because 1 zero left then zero counter must already have been greater than 1. So product = 0.
       product == 0
-    elif incoming == 0 and outgoing > 0:
+    elif incoming == 0 and outgoing > 0: #zero counter goes up by 1 which implies zero counter is greater than 0 and so product = 0.
       zero_counter +=1
       product = 0 
-    elif outgoing == 0 and incoming > 0:
+    elif outgoing == 0 and incoming > 0: #zero counter goes down by 1
       zero_counter -= 1
-      if zero_counter == 0:
+      if zero_counter == 0: #then if zero counter is now 0 then the window has no 0's and can be calculated
         product = math.prod(num_list[i:i+window_size])
-    elif zero_counter > 0:
-      product == 0
-  elif zero_counter > 0:
+      elif zero_counter > 0: #this will capture when an incoming is greater than 1 and an outgoing is 0 AND zero counter is still greater than 0
+        product = 0
+  elif zero_counter > 0: #this captures where both incoming and outgoing are greater than 0 but when zero counter is still greater than 0
     product = 0
-  else:
+  else: #this is the expression that is used the most. it will calculate the product of a window that does not contain 0's.
     product = (product//outgoing)*(incoming)
   print("the product is: %i" % product)
   print(i)
